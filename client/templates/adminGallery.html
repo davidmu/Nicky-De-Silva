@@ -1,0 +1,47 @@
+<div class="col-md-12 AdminFront">
+	<h1>Administrer Galleries</h1>
+	<div class="panel panel-default">
+		<div class="panel-header controls">
+			<div class="col-md-5">
+				<button class="btn btn-default" ng-click="newToggle = !newToggle">New Gallery</button>
+				<button class="btn btn-default" ng-click="addNew()" >New Picture</button>
+				
+				<a href="#/admin" class="btn btn-default">Manage Front</a>
+				<button class="btn btn-success" ng-click="saveGallery()">Save Gallery</button>
+				<select ng-model="gallery.id" ng-change="loadNewImages(gallery.id)" ng-model="gallery.id" ng-options="gallery.id as gallery.titel for gallery in galleries">
+				</select>
+			</div>
+		</div>
+		<div class="panel-body list">
+			<form class="newpictureform" ng-model="newGallery" ng-show="newToggle">
+				<label>Gallery Name</label>
+				<input id="name" ng-model="newName" type="text">
+				<input type="submit" ng-click="addGallery()">
+			</form>
+			<div class="row">
+				<div class="col-md-4">
+					<b>File</b>
+				</div>
+				<div class="col-md-4">
+					<b>Illustration</b>
+				</div>
+				<div class="col-md-4">
+					Remove
+				</div>
+			</div>
+			<div ng-model="pictures" ui-sortable>
+				<div class="row picture-item"  ng-repeat="picture in pictures">
+					<div class="col-md-4">
+						<input type="file" class="picture{{$index}}" nv-file-select uploader="uploader" /> <button ng-click="upload($index)">Upload</button>
+					</div>
+					<div class="col-md-4">
+						<img class="image-illustration" ng-src="{{picture.fileurl}}"/>
+					</div>
+					<div class="col-md-4">
+						<button class="btn btn-danger" ng-click="removePicture($index)">Delete</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

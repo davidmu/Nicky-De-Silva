@@ -1,0 +1,21 @@
+{
+  "name": "Picture",
+  "plural": "Pictures",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "fileurl": {
+      "type": "string"
+    },
+    "filename": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

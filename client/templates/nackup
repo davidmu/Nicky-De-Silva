@@ -1,0 +1,7 @@
+<div class="col-md-10 col-md-offset-1 gallery-image"  ng-repeat="image in images" ng-class="image.class" ng-click="image.isopen = true">
+				<img ng ng-src="{{image.src}}" />
+				<img ng-if="image.double" ng-src="{{image.src1}}">
+				<div ng-show="image.isopen" ng-if="image.hassub" ng-repeat="img in image.subgallery">
+					<img ng ng-src="{{img.src}}" />
+				</div>
+			</div>

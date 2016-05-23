@@ -1,0 +1,1 @@
+var Nicky = angular.module('Nicky', ['angularModalService', 'ngRoute', 'wu.masonry', 'angular-carousel','ui.sortable', 'angularFileUpload'])

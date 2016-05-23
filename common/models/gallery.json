@@ -1,0 +1,24 @@
+{
+  "name": "Gallery",
+  "plural": "Galleries",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "titel": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "pictures": {
+      "type": "hasMany",
+      "model": "Picture",
+      "foreignKey": "galleryId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

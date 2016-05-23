@@ -1,0 +1,40 @@
+<div class="col-md-12 AdminFront">
+	<h1>Administrer Frontpage</h1>
+	<div class="panel panel-default">
+		<div class="panel-header controls">
+			<div class="col-md-5">
+				<button ng-click="addNew()" class="btn btn-default">New picture</button>
+				<a href="#/adminGallery" class="btn btn-default">Manage Galleries</a>
+				<button class="btn btn-success" ng-click="saveAll()">Save All</button>
+			</div>
+		</div>
+		<div class="panel-body list">
+			<div class="row">
+				<div class="col-md-4">
+					<b>File</b>
+				</div>
+				<div class="col-md-4">
+					<b>Illustration</b>
+				</div>
+				<div class="col-md-4">
+					Gallery Choice // Remove
+				</div>
+			</div>
+			<div ui-sortable ng-model="pictures" class="row">
+				<div ng-repeat="picture in pictures" class="col-md-12 picture-item">
+					<div class="col-md-4">
+						<input type="file" value="{{picture.filename}}" class="picture{{$index}}" nv-file-select uploader="uploader"/> <button ng-click="upload($index)">Upload</button>
+					</div>
+					<div class="col-md-4">
+						<img class="image-illustration" ng-src="{{picture.fileurl}}"/>
+					</div>
+					<div class="col-md-4">
+						<select ng-change="gallerySelected(gallery, $index)" ng-model="gallery" ng-options="gallery.id as gallery.titel for gallery in galleries">
+						</select>
+						<button class="btn btn-danger" ng-click="removePicture($index)">Delete</button>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>

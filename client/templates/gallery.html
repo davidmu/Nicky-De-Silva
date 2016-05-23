@@ -1,0 +1,8 @@
+<div class="GalleryC col-md-12" ng-controller="galleryCController">
+  <a class="close" ng-href="/#/"><i class="fa fa-close fa-2x" aria-hidden="true"></i></a>
+  <ul rn-carousel class="image-carousel" rn-carousel-controls>
+	  <li ng-repeat="image in images">
+	    <div class="layer {{image.class}}"><img src="{{image.fileurl}}"/></div>
+	  </li>
+	</ul>
+</div>

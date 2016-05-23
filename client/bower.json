@@ -1,0 +1,23 @@
+{
+  "name": "Nickydesilva.com",
+  "authors": [
+    "David Munksgaard <dmu@anthillagency.com>"
+  ],
+  "description": "Photographer Website",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "nicekydesilva.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.5.0",
+    "angular-ui-sortable": "^0.14.0"
+  }
+}

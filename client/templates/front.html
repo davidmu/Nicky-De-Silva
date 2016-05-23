@@ -1,0 +1,10 @@
+<header ng-click="showAddressModal()">
+	<img class="logo" src="img/logo.png" />
+</header>
+<div class="row main-content">
+	<div masonry class="masonry">
+		<div class="masonry-brick" ng-repeat="image in images">
+		        <a ng-href="{{image.galleryLink ? '#/gallery/'+image.galleryLink: ''}}"><img ng-click="galleryClick($index)" ng-src="{{ image.fileurl }}" alt="A masonry brick"></a>
+		</div>
+	</div>
+</div>
